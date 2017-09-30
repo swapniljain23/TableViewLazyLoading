@@ -20,9 +20,3 @@ extension String{
         return html
     }
 }
-
-extension UIImage{
-    func startDownloadingImage(url: String){
-        
-    }
-}

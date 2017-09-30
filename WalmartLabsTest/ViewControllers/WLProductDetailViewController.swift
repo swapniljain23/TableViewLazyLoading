@@ -13,7 +13,7 @@ class WLProductDetailViewController: UIViewController, UIPageViewControllerDataS
     // Initiate page view controller
     let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     
-    var products: WLProducts?
+    var productManager: WLProductManager?
     var currentPageIndex = 0
     
     override func viewDidLoad() {
@@ -38,7 +38,6 @@ class WLProductDetailViewController: UIViewController, UIPageViewControllerDataS
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     /*
     // MARK: - Navigation
@@ -65,7 +64,7 @@ class WLProductDetailViewController: UIViewController, UIPageViewControllerDataS
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         var index = (viewController as! WLProductDataViewController).pageIndex
         
-        if let products = products, index == products.totalProducts - 1{
+        if let productManager = productManager, index == productManager.totalProducts - 1{
             return nil
         }
         
@@ -80,6 +79,9 @@ class WLProductDetailViewController: UIViewController, UIPageViewControllerDataS
         // Initiate a new data vc
         let dataVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WLProductDataVC") as! WLProductDataViewController
         dataVC.pageIndex = index
+        if let productManager = productManager, index < productManager.listOfProducts.count {
+            dataVC.product = productManager.listOfProducts[index]
+        }
         return dataVC
     }
 }

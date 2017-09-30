@@ -7,33 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28E4DB101F7F1B8E008C34BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28E4DAFD1F7F1999008C34BD /* Main.storyboard */; };
-		28E4DB111F7F1B9A008C34BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28E4DAFB1F7F1999008C34BD /* LaunchScreen.storyboard */; };
+		2835E4691F7F676B00426F2A /* WLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2835E4681F7F676500426F2A /* WLExtensions.swift */; };
+		2835E46A1F7F67B000426F2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28E4DB231F7F6644008C34BD /* Main.storyboard */; };
+		2835E46B1F7F67B500426F2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28E4DB211F7F6644008C34BD /* LaunchScreen.storyboard */; };
+		2835E46C1F7F67BA00426F2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28E4DB201F7F6644008C34BD /* Assets.xcassets */; };
+		2835E46E1F7F680000426F2A /* WLProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2835E46D1F7F680000426F2A /* WLProduct.swift */; };
 		28E4DB121F7F1C1B008C34BD /* WLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E4DB0A1F7F1999008C34BD /* WLConstants.swift */; };
 		28E4DB131F7F1C28008C34BD /* WLProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E4DB011F7F1999008C34BD /* WLProductTableViewCell.swift */; };
 		28E4DB141F7F1C2B008C34BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E4DB031F7F1999008C34BD /* AppDelegate.swift */; };
-		28E4DB151F7F1C2E008C34BD /* WLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E4DB051F7F1999008C34BD /* WLExtensions.swift */; };
-		28E4DB161F7F1C31008C34BD /* WLProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E4DAF81F7F1999008C34BD /* WLProducts.swift */; };
+		28E4DB161F7F1C31008C34BD /* WLProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E4DAF81F7F1999008C34BD /* WLProductManager.swift */; };
 		28E4DB171F7F1C34008C34BD /* WLProductDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E4DB0C1F7F199A008C34BD /* WLProductDataViewController.swift */; };
 		28E4DB181F7F1C37008C34BD /* WLProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E4DB0D1F7F199A008C34BD /* WLProductDetailViewController.swift */; };
 		28E4DB191F7F1C3A008C34BD /* WLProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E4DB0E1F7F199A008C34BD /* WLProductsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2835E4681F7F676500426F2A /* WLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLExtensions.swift; sourceTree = "<group>"; };
+		2835E46D1F7F680000426F2A /* WLProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLProduct.swift; sourceTree = "<group>"; };
 		28E4DADF1F7F190C008C34BD /* WalmartLabsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalmartLabsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		28E4DAF81F7F1999008C34BD /* WLProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLProducts.swift; sourceTree = "<group>"; };
-		28E4DAFA1F7F1999008C34BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		28E4DAFC1F7F1999008C34BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		28E4DAFE1F7F1999008C34BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		28E4DAFF1F7F1999008C34BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28E4DAF81F7F1999008C34BD /* WLProductManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLProductManager.swift; sourceTree = "<group>"; };
 		28E4DB011F7F1999008C34BD /* WLProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLProductTableViewCell.swift; sourceTree = "<group>"; };
 		28E4DB031F7F1999008C34BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		28E4DB051F7F1999008C34BD /* WLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLExtensions.swift; sourceTree = "<group>"; };
 		28E4DB081F7F1999008C34BD /* WalmartLabsTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WalmartLabsTest.xcdatamodel; sourceTree = "<group>"; };
 		28E4DB0A1F7F1999008C34BD /* WLConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLConstants.swift; sourceTree = "<group>"; };
 		28E4DB0C1F7F199A008C34BD /* WLProductDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLProductDataViewController.swift; sourceTree = "<group>"; };
 		28E4DB0D1F7F199A008C34BD /* WLProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLProductDetailViewController.swift; sourceTree = "<group>"; };
 		28E4DB0E1F7F199A008C34BD /* WLProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLProductsTableViewController.swift; sourceTree = "<group>"; };
+		28E4DB201F7F6644008C34BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		28E4DB221F7F6644008C34BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		28E4DB241F7F6644008C34BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		28E4DB251F7F6644008C34BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +50,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2835E4671F7F676500426F2A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2835E4681F7F676500426F2A /* WLExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		28E4DAD61F7F190C008C34BD = {
 			isa = PBXGroup;
 			children = (
@@ -66,14 +77,14 @@
 		28E4DAE11F7F190C008C34BD /* WalmartLabsTest */ = {
 			isa = PBXGroup;
 			children = (
-				28E4DB091F7F1999008C34BD /* Constants */,
-				28E4DB061F7F1999008C34BD /* CoreData */,
-				28E4DB001F7F1999008C34BD /* CustomCell */,
 				28E4DB021F7F1999008C34BD /* Delegates */,
-				28E4DB041F7F1999008C34BD /* Extensions */,
-				28E4DAF71F7F1999008C34BD /* Model */,
-				28E4DAF91F7F1999008C34BD /* Resources */,
 				28E4DB0B1F7F199A008C34BD /* ViewControllers */,
+				28E4DAF71F7F1999008C34BD /* Model */,
+				2835E4671F7F676500426F2A /* Extensions */,
+				28E4DB091F7F1999008C34BD /* Constants */,
+				28E4DB001F7F1999008C34BD /* CustomCell */,
+				28E4DB061F7F1999008C34BD /* CoreData */,
+				28E4DB1F1F7F6644008C34BD /* Resources */,
 			);
 			path = WalmartLabsTest;
 			sourceTree = "<group>";
@@ -81,20 +92,10 @@
 		28E4DAF71F7F1999008C34BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				28E4DAF81F7F1999008C34BD /* WLProducts.swift */,
+				28E4DAF81F7F1999008C34BD /* WLProductManager.swift */,
+				2835E46D1F7F680000426F2A /* WLProduct.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		28E4DAF91F7F1999008C34BD /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				28E4DAFA1F7F1999008C34BD /* Assets.xcassets */,
-				28E4DAFB1F7F1999008C34BD /* LaunchScreen.storyboard */,
-				28E4DAFD1F7F1999008C34BD /* Main.storyboard */,
-				28E4DAFF1F7F1999008C34BD /* Info.plist */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		28E4DB001F7F1999008C34BD /* CustomCell */ = {
@@ -111,14 +112,6 @@
 				28E4DB031F7F1999008C34BD /* AppDelegate.swift */,
 			);
 			path = Delegates;
-			sourceTree = "<group>";
-		};
-		28E4DB041F7F1999008C34BD /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				28E4DB051F7F1999008C34BD /* WLExtensions.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		28E4DB061F7F1999008C34BD /* CoreData */ = {
@@ -140,11 +133,22 @@
 		28E4DB0B1F7F199A008C34BD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				28E4DB0C1F7F199A008C34BD /* WLProductDataViewController.swift */,
-				28E4DB0D1F7F199A008C34BD /* WLProductDetailViewController.swift */,
 				28E4DB0E1F7F199A008C34BD /* WLProductsTableViewController.swift */,
+				28E4DB0D1F7F199A008C34BD /* WLProductDetailViewController.swift */,
+				28E4DB0C1F7F199A008C34BD /* WLProductDataViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		28E4DB1F1F7F6644008C34BD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				28E4DB201F7F6644008C34BD /* Assets.xcassets */,
+				28E4DB211F7F6644008C34BD /* LaunchScreen.storyboard */,
+				28E4DB231F7F6644008C34BD /* Main.storyboard */,
+				28E4DB251F7F6644008C34BD /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,8 +210,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28E4DB111F7F1B9A008C34BD /* LaunchScreen.storyboard in Resources */,
-				28E4DB101F7F1B8E008C34BD /* Main.storyboard in Resources */,
+				2835E46C1F7F67BA00426F2A /* Assets.xcassets in Resources */,
+				2835E46B1F7F67B500426F2A /* LaunchScreen.storyboard in Resources */,
+				2835E46A1F7F67B000426F2A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,11 +223,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2835E4691F7F676B00426F2A /* WLExtensions.swift in Sources */,
 				28E4DB191F7F1C3A008C34BD /* WLProductsTableViewController.swift in Sources */,
+				2835E46E1F7F680000426F2A /* WLProduct.swift in Sources */,
 				28E4DB181F7F1C37008C34BD /* WLProductDetailViewController.swift in Sources */,
 				28E4DB171F7F1C34008C34BD /* WLProductDataViewController.swift in Sources */,
-				28E4DB161F7F1C31008C34BD /* WLProducts.swift in Sources */,
-				28E4DB151F7F1C2E008C34BD /* WLExtensions.swift in Sources */,
+				28E4DB161F7F1C31008C34BD /* WLProductManager.swift in Sources */,
 				28E4DB141F7F1C2B008C34BD /* AppDelegate.swift in Sources */,
 				28E4DB131F7F1C28008C34BD /* WLProductTableViewCell.swift in Sources */,
 				28E4DB121F7F1C1B008C34BD /* WLConstants.swift in Sources */,
@@ -232,18 +238,18 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		28E4DAFB1F7F1999008C34BD /* LaunchScreen.storyboard */ = {
+		28E4DB211F7F6644008C34BD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				28E4DAFC1F7F1999008C34BD /* Base */,
+				28E4DB221F7F6644008C34BD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		28E4DAFD1F7F1999008C34BD /* Main.storyboard */ = {
+		28E4DB231F7F6644008C34BD /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				28E4DAFE1F7F1999008C34BD /* Base */,
+				28E4DB241F7F6644008C34BD /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -362,6 +368,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WN7V47JGL;
 				INFOPLIST_FILE = "$(SRCROOT)/WalmartLabsTest/Resources/Info.plist";
@@ -377,6 +384,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WN7V47JGL;
 				INFOPLIST_FILE = "$(SRCROOT)/WalmartLabsTest/Resources/Info.plist";

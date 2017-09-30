@@ -10,7 +10,7 @@ import UIKit
 
 class WLProductsTableViewController: UITableViewController {
 
-    var walmartProducts = WLProducts()
+    var productManager = WLProductManager()
     let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     
     // MARK:- View life cycle
@@ -25,7 +25,7 @@ class WLProductsTableViewController: UITableViewController {
         tableView.addSubview(activityIndicatorView)
         
         // Get products
-        walmartProducts.getWalmartProducts(){
+        productManager.getWalmartProducts(){
             // Remove activity indicator and reload table view
             self.activityIndicatorView.startAnimating()
             self.activityIndicatorView.removeFromSuperview()
@@ -44,37 +44,38 @@ class WLProductsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return walmartProducts.totalProducts
+        return productManager.totalProducts
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath)
         
-        if indexPath.row < walmartProducts.listOfProducts.count{
+        if indexPath.row < productManager.listOfProducts.count{
             // Get the product and update the cell
-            let product = walmartProducts.listOfProducts[indexPath.row]
+            let product = productManager.listOfProducts[indexPath.row]
             
-            if let cell = cell as? WLProductTableViewCell{
-                cell.isLoading = false
-                cell.productName.text = product.productName
-                cell.productDescription.attributedText = product.shortDescription.htmlAttributedString()
-                cell.productRatings.text = "Ratings: \(product.reviewRating)"
-                cell.productPrice.text = product.price
-                cell.productReviewCount.text = "Review Count: \(product.reviewCount)"
-                cell.productInStock.text = (product.inStock)  ? "In Stock" : "Not In Stock"
-                if product.productImage != nil{
-                    cell.productImageView.image = product.productImage
-                }else{
-                    if self.tableView.isDragging == false && self.tableView.isDecelerating == false{
-                        product.downloadImage {
-                            cell.productImageView.image = product.productImage
-                        }
-                    }
-                    // placeholder image
-                    cell.productImageView.image = UIImage(named: "load-d")
-                }
+            guard let tableViewCell = cell as? WLProductTableViewCell else{
+                return cell
             }
             
+            tableViewCell.isLoading = false
+            tableViewCell.productName.text = product.productName
+            tableViewCell.productDescription.attributedText = product.shortDescription.htmlAttributedString()
+            tableViewCell.productRatings.text = "Ratings: \(product.reviewRating)"
+            tableViewCell.productPrice.text = product.price
+            tableViewCell.productReviewCount.text = "Review Count: \(product.reviewCount)"
+            tableViewCell.productInStock.text = (product.inStock)  ? "In Stock" : "Not In Stock"
+            if product.productImage != nil{
+                tableViewCell.productImageView.image = product.productImage
+            }else{
+                if self.tableView.isDragging == false && self.tableView.isDecelerating == false{
+                    product.downloadImage {
+                        tableViewCell.productImageView.image = product.productImage
+                    }
+                }
+                // placeholder image
+                tableViewCell.productImageView.image = UIImage(named: "load-d")
+            }
         }else{
             // load the placeholder cell
             if let cell = cell as? WLProductTableViewCell{
@@ -85,11 +86,10 @@ class WLProductsTableViewController: UITableViewController {
                 cell.productPrice.text = ""
                 cell.productReviewCount.text = ""
                 cell.productInStock.text = ""
+                cell.productImageView.image = UIImage(named: "load-d")
             }
         }
-
         loadTheNextPageIfNeeded(indexPath: indexPath)
-        
         return cell
     }
     
@@ -97,7 +97,7 @@ class WLProductsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailVC = WLProductDetailViewController()
         detailVC.currentPageIndex = indexPath.row
-        detailVC.products = walmartProducts
+        detailVC.productManager = productManager
         
         // Push
         navigationController?.pushViewController(detailVC, animated: true)
@@ -118,11 +118,11 @@ class WLProductsTableViewController: UITableViewController {
     
     //
     func loadTheNextPageIfNeeded(indexPath: IndexPath){
-        if indexPath.row + walmartProducts.pageSize < walmartProducts.listOfProducts.count{
+        if indexPath.row + productManager.pageSize < productManager.listOfProducts.count{
             return
         }
-        if (indexPath.row +  walmartProducts.pageSize) / walmartProducts.pageSize + 1 >= walmartProducts.nextPageIndex{
-            walmartProducts.getWalmartProducts(){
+        if (indexPath.row +  productManager.pageSize) / productManager.pageSize + 1 >= productManager.nextPageIndex{
+            productManager.getWalmartProducts(){
                 self.reloadVisibleCellIfNeeded()
             }
         }
@@ -137,8 +137,8 @@ class WLProductsTableViewController: UITableViewController {
             return
         }
         for indexPath in indexPaths{
-            if let cell = tableView.cellForRow(at: indexPath) as? WLProductTableViewCell, cell.isLoading, indexPath.row < walmartProducts.listOfProducts.count{
-                let product = walmartProducts.listOfProducts[indexPath.row]
+            if let cell = tableView.cellForRow(at: indexPath) as? WLProductTableViewCell, cell.isLoading, indexPath.row < productManager.listOfProducts.count{
+                let product = productManager.listOfProducts[indexPath.row]
                 cell.isLoading = false
                 cell.productName.text = product.productName
                 cell.productDescription.attributedText = product.shortDescription.htmlAttributedString()
@@ -156,8 +156,8 @@ class WLProductsTableViewController: UITableViewController {
             return
         }
         for indexPath in indexPaths{
-            if let cell = tableView.cellForRow(at: indexPath) as? WLProductTableViewCell, indexPath.row < walmartProducts.listOfProducts.count{
-                let product = walmartProducts.listOfProducts[indexPath.row]
+            if let cell = tableView.cellForRow(at: indexPath) as? WLProductTableViewCell, indexPath.row < productManager.listOfProducts.count{
+                let product = productManager.listOfProducts[indexPath.row]
                 if product.productImage == nil{
                     product.downloadImage {
                         cell.productImageView.image = product.productImage
