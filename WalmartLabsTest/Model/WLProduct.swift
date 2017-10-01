@@ -65,6 +65,7 @@ class WLProduct {
         guard let url = URL(string: productImageUrl) else{
             return
         }
+        print("Downloading Image..")
         // Initiate url request
         let urlRequest = URLRequest(url: url)
         

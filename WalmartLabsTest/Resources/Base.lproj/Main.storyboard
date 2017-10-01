@@ -106,6 +106,7 @@
                         <connections>
                             <outlet property="dataSource" destination="KHe-O7-sUq" id="V6m-wD-WeX"/>
                             <outlet property="delegate" destination="KHe-O7-sUq" id="CEG-it-aPb"/>
+                            <outlet property="prefetchDataSource" destination="KHe-O7-sUq" id="a2R-86-JIf"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="PRODUCTS" id="A8y-C3-phg"/>
