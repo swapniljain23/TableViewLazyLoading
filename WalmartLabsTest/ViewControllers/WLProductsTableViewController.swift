@@ -50,14 +50,15 @@ class WLProductsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath)
         
+        guard let tableViewCell = cell as? WLProductTableViewCell else{
+            return cell
+        }
+        
         if indexPath.row < productManager.listOfProducts.count{
+            
             // Get the product and update the cell
             let product = productManager.listOfProducts[indexPath.row]
-            
-            guard let tableViewCell = cell as? WLProductTableViewCell else{
-                return cell
-            }
-            
+    
             tableViewCell.isLoading = false
             tableViewCell.productName.text = product.productName
             tableViewCell.productDescription.attributedText = product.shortDescription.htmlAttributedString()
@@ -65,6 +66,7 @@ class WLProductsTableViewController: UITableViewController {
             tableViewCell.productPrice.text = product.price
             tableViewCell.productReviewCount.text = "Review Count: \(product.reviewCount)"
             tableViewCell.productInStock.text = (product.inStock)  ? "In Stock" : "Not In Stock"
+            
             if product.productImage != nil{
                 tableViewCell.productImageView.image = product.productImage
             }else{
@@ -78,19 +80,17 @@ class WLProductsTableViewController: UITableViewController {
             }
         }else{
             // load the placeholder cell
-            if let cell = cell as? WLProductTableViewCell{
-                cell.isLoading = true
-                cell.productName.text = "Loading.."
-                cell.productDescription.text = ""
-                cell.productRatings.text = ""
-                cell.productPrice.text = ""
-                cell.productReviewCount.text = ""
-                cell.productInStock.text = ""
-                cell.productImageView.image = UIImage(named: "load-d")
-            }
+            tableViewCell.isLoading = true
+            tableViewCell.productName.text = "Loading.."
+            tableViewCell.productDescription.text = ""
+            tableViewCell.productRatings.text = ""
+            tableViewCell.productPrice.text = ""
+            tableViewCell.productReviewCount.text = ""
+            tableViewCell.productInStock.text = ""
+            tableViewCell.productImageView.image = UIImage(named: "load-d")
         }
         loadTheNextPageIfNeeded(indexPath: indexPath)
-        return cell
+        return tableViewCell
     }
     
     // MARK: UITableView Delegates

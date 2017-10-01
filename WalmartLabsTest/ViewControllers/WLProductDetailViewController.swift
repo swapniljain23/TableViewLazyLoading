@@ -24,6 +24,7 @@ class WLProductDetailViewController: UIViewController, UIPageViewControllerDataS
         pageViewController.delegate = self
         
         // Add pageViewController's view as subview
+        pageViewController.view.backgroundColor = UIColor.white
         addChildViewController(pageViewController)
         view.addSubview(pageViewController.view)
         pageViewController.didMove(toParentViewController: self)

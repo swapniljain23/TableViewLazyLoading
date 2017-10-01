@@ -57,7 +57,7 @@ class WLProductManager {
                     }
                 }
             }catch{
-                
+                // Handle any exception here
             }
             if let _ = error{
                 // Handle error here.
