@@ -8,6 +8,9 @@
 
 import UIKit
 
+func print(_ items: Any..., separator: String = " ", terminator: String = "\n") {
+}
+
 // MARK:- Response Keys
 let kProductIdKey                       =   "productId"
 let kProductNameKey                     =   "productName"

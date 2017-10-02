@@ -32,6 +32,7 @@ class WLProductManager {
                     // Handle unexpected format here.
                     return
                 }
+                //print(jsonData)
                 for (key, value) in jsonData{
                     switch key{
                     case kProductsKey:

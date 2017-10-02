@@ -73,6 +73,8 @@ class WLProductsTableViewController: UITableViewController, UITableViewDataSourc
         }
         
         let nextPageIndexToLoad = (lastIndexPath.row / productManager.pageSize) + 1
+        
+        // During normal scorll, this loop will be call just once.
         while nextPageIndexToLoad >= productManager.nextPageIndex{
             print("LOAD PAGE for INDEX: \(nextPageIndexToLoad)")
             // getWalmartProducts API call increment the productManager.nextPageIndex count by 1
@@ -111,8 +113,10 @@ class WLProductsTableViewController: UITableViewController, UITableViewDataSourc
         guard let indexPaths = visibleIndexPaths else{
             return
         }
+        print("reloadVisibleCellIfNeeded: \(indexPaths.count)")
         for indexPath in indexPaths{
             if let cell = tableView.cellForRow(at: indexPath) as? WLProductTableViewCell, cell.isLoading, indexPath.row < productManager.listOfProducts.count{
+                print("reloadVisibleCellIfNeeded:")
                 let product = productManager.listOfProducts[indexPath.row]
                 setDataInCell(tableViewCell: cell, product: product, indexPath: indexPath)
             }
@@ -156,6 +160,7 @@ class WLProductsTableViewController: UITableViewController, UITableViewDataSourc
     
     // MARK:- Lazy image downloading (Will be called only when user stop scrolling)
     func downloadPendingImages(){
+        print("downloadPendingImages: \(pendingImageDownloadStack.count)")
         while pendingImageDownloadStack.count > 0{
             let indexPath = pendingImageDownloadStack.removeLast()
             if productManager.listOfProducts.count > indexPath.row{

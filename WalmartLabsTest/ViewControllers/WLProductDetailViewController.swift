@@ -77,6 +77,9 @@ class WLProductDetailViewController: UIViewController, UIPageViewControllerDataS
     
     // MARK:- Helpers
     func viewControllerAtIndex(index: Int) -> WLProductDataViewController{
+        // Prefetch data if needed.
+        prefetchNextPageIfNeeded(index: index)
+        
         // Initiate a new data vc
         let dataVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WLProductDataVC") as! WLProductDataViewController
         dataVC.pageIndex = index
@@ -84,5 +87,19 @@ class WLProductDetailViewController: UIViewController, UIPageViewControllerDataS
             dataVC.product = productManager.listOfProducts[index]
         }
         return dataVC
+    }
+    
+    func prefetchNextPageIfNeeded(index: Int){
+        guard let productManager = productManager else{
+            return
+        }
+        let nextPageIndexToLoad = ((index+productManager.pageSize) / productManager.pageSize) + 1
+        if nextPageIndexToLoad >= productManager.nextPageIndex{
+            print("LOAD PAGE for INDEX: \(nextPageIndexToLoad)")
+            // getWalmartProducts API call increment the productManager.nextPageIndex count by 1
+            productManager.getWalmartProducts {
+                // do NOT reload table view/cell here
+            }
+        }
     }
 }
