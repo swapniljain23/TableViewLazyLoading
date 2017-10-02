@@ -9,6 +9,8 @@
 import UIKit
 
 class WLProduct {
+    
+    // MARK:- Properties
     var productId: String
     var productName: String
     var shortDescription: String
@@ -47,7 +49,7 @@ class WLProduct {
      self.inStock = inStock
      } */
     
-    // Designated Initializer
+    // MARK:- Designated Initializer
     init(productDictionary: Dictionary<String, Any>){
         self.productId = productDictionary[kProductIdKey] as? String ?? ""
         self.productName = productDictionary[kProductNameKey] as? String ?? ""
@@ -60,6 +62,7 @@ class WLProduct {
         self.inStock = productDictionary[kProductInStockKey] as? Bool ?? false
     }
     
+    // MARK:- Instance methods
     // Download image in background thread
     func downloadImage(completionHandler: @escaping () -> Void){
         guard let url = URL(string: productImageUrl) else{

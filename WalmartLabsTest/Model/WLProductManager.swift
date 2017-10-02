@@ -9,11 +9,14 @@
 import UIKit
 
 class WLProductManager {
+    
+    // MARK:- Properties
     var listOfProducts = [WLProduct]()
     var totalProducts = 0
     var nextPageIndex = 1
     let pageSize = 10
     
+    // MARK:- Instance methods
     // Request to get products
     func getWalmartProducts(completionHandler: @escaping () -> Void){
         print("getWalmartProducts: \(nextPageIndex)")

@@ -10,6 +10,7 @@ import UIKit
 
 class WLProductTableViewCell: UITableViewCell {
 
+    // MARK:- Properties
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productDescription: UILabel!
     @IBOutlet weak var productRatings: UILabel!
@@ -19,6 +20,7 @@ class WLProductTableViewCell: UITableViewCell {
     @IBOutlet weak var productImageView: UIImageView!
     var isLoading = true
     
+    // MARK:- View life cycle
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

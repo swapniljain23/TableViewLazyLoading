@@ -10,12 +10,14 @@ import UIKit
 
 class WLProductDetailViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
+    // MARK:- Properties
     // Initiate page view controller
     let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     
     var productManager: WLProductManager?
     var currentPageIndex = 0
     
+    // MARK:- View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,16 +41,6 @@ class WLProductDetailViewController: UIViewController, UIPageViewControllerDataS
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     // MARK:- UIPageView Controller Data source
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
@@ -98,7 +90,7 @@ class WLProductDetailViewController: UIViewController, UIPageViewControllerDataS
             print("LOAD PAGE for INDEX: \(nextPageIndexToLoad)")
             // getWalmartProducts API call increment the productManager.nextPageIndex count by 1
             productManager.getWalmartProducts {
-                // do NOT reload table view/cell here
+                
             }
         }
     }

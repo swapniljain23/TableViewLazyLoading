@@ -10,6 +10,7 @@ import UIKit
 
 class WLProductsTableViewController: UITableViewController, UITableViewDataSourcePrefetching {
 
+    // MARK:- Properties
     var productManager = WLProductManager()
     let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     var pendingImageDownloadStack = [IndexPath]()
